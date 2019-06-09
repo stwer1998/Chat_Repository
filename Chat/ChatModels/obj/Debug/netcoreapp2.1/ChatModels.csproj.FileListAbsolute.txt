@@ -1,0 +1,6 @@
+C:\Users\Администратор\source\repos\Chat\ChatModels\bin\Debug\netcoreapp2.1\ChatModels.deps.json
+C:\Users\Администратор\source\repos\Chat\ChatModels\bin\Debug\netcoreapp2.1\ChatModels.dll
+C:\Users\Администратор\source\repos\Chat\ChatModels\obj\Debug\netcoreapp2.1\ChatModels.csprojAssemblyReference.cache
+C:\Users\Администратор\source\repos\Chat\ChatModels\obj\Debug\netcoreapp2.1\ChatModels.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\source\repos\Chat\ChatModels\obj\Debug\netcoreapp2.1\ChatModels.AssemblyInfoInputs.cache
+C:\Users\Администратор\source\repos\Chat\ChatModels\obj\Debug\netcoreapp2.1\ChatModels.AssemblyInfo.cs
