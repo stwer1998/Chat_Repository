@@ -6,7 +6,7 @@ namespace ChatModels
 {
     public class Rights
     {
-        public int RightId { get; private set; }
+        public int Id { get; private set; }
         public string Right { get; set; }
     }
 }
