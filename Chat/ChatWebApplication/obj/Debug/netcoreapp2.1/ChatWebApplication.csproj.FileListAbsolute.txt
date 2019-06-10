@@ -34,3 +34,4 @@ D:\C#\Chat_Repository\Chat\ChatWebApplication\bin\Debug\netcoreapp2.1\ChatModels
 D:\C#\Chat_Repository\Chat\ChatWebApplication\bin\Debug\netcoreapp2.1\ChatModels.pdb
 D:\C#\Chat_Repository\Chat\ChatWebApplication\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
 D:\C#\Chat_Repository\Chat\ChatWebApplication\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+D:\C#\Chat_Repository\Chat\ChatWebApplication\obj\Debug\netcoreapp2.1\Razor\Views\Chat\Index.g.cshtml.cs
