@@ -10,7 +10,7 @@ namespace ChatModels
         public string NameGroup { get; set; }
         public List<Message> Messages { get; set; }
         public List<User> Members { get; set; }
-        public User Owner { get; set; }
+        public User Admin { get; set; }
         public List<Permission> PermissionUser { get; set; }
     }
 }
