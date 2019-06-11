@@ -36,9 +36,8 @@ namespace ChatWebApplication.Controllers
             {
                 await Authenticate(model.Name); // аутентификация
 
-                return RedirectToAction("Home", "Index");
+                return RedirectToAction("Index","Chat");
             }
-
             else return View(model);
 
         }
@@ -60,8 +59,9 @@ namespace ChatWebApplication.Controllers
             {
                 User u = new User { Name = model.Name, Surname = model.Surname, PasswordHash = model.Password.GetHashCode() };
                 unitofwork.AddUser(u);
+                await Authenticate(model.Name);
             }
-            return View();
+            return RedirectToAction("Index", "Chat");
         }
 
         private async Task Authenticate(string userName)

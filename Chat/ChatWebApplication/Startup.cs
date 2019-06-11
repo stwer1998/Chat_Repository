@@ -30,6 +30,7 @@ namespace ChatWebApplication
             //    options.CheckConsentNeeded = context => true;
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
+            services.AddSignalR();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                .AddCookie(options => //CookieAuthenticationOptions
                {
@@ -51,17 +52,22 @@ namespace ChatWebApplication
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
 
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chat");
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Chat}/{action=Index}/{id?}");
             });
+            
         }
     }
 }
