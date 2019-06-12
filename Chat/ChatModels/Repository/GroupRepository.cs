@@ -42,11 +42,14 @@ namespace ChatModels
             throw new NotImplementedException();
         }
 
-        public int GreateGroup(User user,string name)
+        public List<Group> GetUserGroups(User user)
         {
-            db.Group.Add(new Group {NameGroup=name,Admin=user});
-            db.SaveChanges();
-            return db.Group.FirstOrDefault(x => x.NameGroup == name && x.Admin == user).GroupId;
+            throw new NotImplementedException();
+        }
+
+        public int GreateGroup(User user, string name)
+        {
+            throw new NotImplementedException();
         }
 
         public void RenameGroup(int groupId, User user, string newname)

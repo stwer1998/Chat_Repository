@@ -10,6 +10,6 @@ namespace ChatModels
         public string Name { get; set; }
         public string Surname { get; set; }
         public int PasswordHash { get; set; }
-        public Rights Rights { get; set; }
+        public Role Role { get; set; }
     }
 }

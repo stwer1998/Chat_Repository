@@ -14,11 +14,12 @@ namespace ChatModels
         public DbSet<User> User { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Group> Group { get; set; }
-        public DbSet<Rights> Rights { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<GroupMember> GroupMembers { get; set; }
+
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureCreated();  
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
