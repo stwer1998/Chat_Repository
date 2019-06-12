@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "CreateGroup";
+}
+
+<h2>CreateGroup</h2>
+
+<form asp-controller="Chat" asp-action="CreateGroup" method="post">
+    <div>
+        <h3>Название группы</h3>
+    </div>
+    <div>
+        <input type="text" name="name" />
+    </div>
+    <div>
+        <input type="submit" value="Создать" />
+    </div>
+
+</form>
+

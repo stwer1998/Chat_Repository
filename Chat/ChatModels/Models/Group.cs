@@ -10,5 +10,6 @@ namespace ChatModels
         public string NameGroup { get; set; }
         public List<GroupMember> Members { get; set; }
         public List<Message> Messages { get; set; }
+        public Role RoleGroup { get; set; }
     }
 }

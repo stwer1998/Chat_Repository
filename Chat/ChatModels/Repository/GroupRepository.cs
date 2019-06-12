@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChatModels
 {
@@ -12,59 +13,80 @@ namespace ChatModels
             db = new MyDbContext();
         }
 
-        public void AddMember(int groupId, User user, User newuser)
+        public bool AddMember(int groupId, User user, User newuser)
         {
-            throw new NotImplementedException();
+            if (Check(user, groupId) != "bloced") { return true; }
+            else return false;
         }
 
-        public void AddModerator(int groupId, User user, User moderatoruser)
+        public bool AddModerator(int groupId, User user, User moderatoruser)
         {
-            throw new NotImplementedException();
+            if (Check(user, groupId) == "admin") { return true; }
+            else return false;
         }
 
-        public void BlockUser(int groupId, User user, User blockuser)
+        public bool BlockUser(int groupId, User user, User blockuser)
         {
-            throw new NotImplementedException();
+            if (Check(user,groupId) == "admin" || Check(user, groupId) == "moderator") { return true; }
+            else return false;
         }
 
-        public void DeleteMessage(int groupId, User user, int idmessage)
+        public bool DeleteMessage(int groupId, User user, int idmessage)
         {
-            throw new NotImplementedException();
+            if (Check(user, groupId) == "admin" || Check(user, groupId) == "moderator") { return true; }
+            else return false;
         }
 
-        public void DropMember(int groupId, User user, User dropuser)
+        public bool DropMember(int groupId, User user, User dropuser)
         {
-            throw new NotImplementedException();
+            if (Check(user,groupId) == "admin"|| Check(user, groupId) == "moderator") { return true; }
+            else return false;
         }
 
-        public void DropModerator(int groupId, User user, User dropmoderator)
+        public bool DropModerator(int groupId, User user, User dropmoderator)
         {
-            throw new NotImplementedException();
+            if (Check(user,groupId) == "admin") { return true; }
+            else return false;
+        }
+
+        public User GetUser(string login)
+        {
+            return db.User.FirstOrDefault(x=>x.Name==login);
         }
 
         public List<Group> GetUserGroups(User user)
         {
+             return db.Group.Where(x => x.Members.Select(w => w.Member).Contains(new User())).ToList();
+        }
+
+        public bool RenameGroup(int groupId, User user, string newname)
+        {
+            if (Check(user,groupId)=="admin") { return true; }
+            else return false;
+        }
+
+        public bool SendMessage(int groupId, User senduser, string message)
+        {
+            if (Check(senduser,groupId)!="blocked") { return true; }
+            else return false;
+        }
+
+        public bool UnlockUser(int groupId, User user, User unlockkuser)
+        {
+            var r = db.Group.Include(x => x.Members);
             throw new NotImplementedException();
         }
 
-        public int GreateGroup(User user, string name)
+        public int СreateGroup(User user, string name)
         {
-            throw new NotImplementedException();
+            db.Group.Add(new Group {NameGroup=name,Members=new List<GroupMember>() { new GroupMember {Member=user,RoleInGroup=db.Roles.FirstOrDefault(x=>x.UserRole=="admin") } } });
+            db.SaveChanges();
+            return db.Group.FirstOrDefault(x=>x.NameGroup==name&&x.Members.First().Member==user).GroupId;
         }
 
-        public void RenameGroup(int groupId, User user, string newname)
+        private string Check(User user,int groupId)
         {
-            throw new NotImplementedException();
-        }
-
-        public void SendMessage(int groupId, User senduser, string message)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UnlockUser(int groupId, User user, User unlockkuser)
-        {
-            throw new NotImplementedException();
+            return db.Group.First(x => x.GroupId == groupId).Members.First(w => w.Member == user).RoleInGroup.UserRole;
         }
     }
 }
