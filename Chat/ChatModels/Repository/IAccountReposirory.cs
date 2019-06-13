@@ -12,7 +12,7 @@ namespace ChatModels
         /// <param name="login"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        bool GetUser(string login, int password);
+        bool GetUser(string login, string password);
         /// <summary>
         /// Добавления пользователя в базу данных
         /// </summary>

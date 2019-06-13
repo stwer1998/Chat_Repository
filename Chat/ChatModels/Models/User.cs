@@ -8,7 +8,7 @@ namespace ChatModels
     {
         public int UserId { get;private set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public int PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
+        public Role Role { get; set; }
     }
 }

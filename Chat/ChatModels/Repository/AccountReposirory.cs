@@ -14,7 +14,16 @@ namespace ChatModels
 
         public void AddUser(User user)
         {
-            db.User.Add(user);
+            var role = db.Roles.FirstOrDefault(x => x.UserRole == "active");
+            if (role==null)
+            {
+                var firsttime = new FirstDates();
+                firsttime.AddingRoles();
+                role= db.Roles.FirstOrDefault(x => x.UserRole == "active");
+            }
+            
+            var user1 = new User() { Name = user.Name, PasswordHash = user.PasswordHash, Role = role };
+            db.User.Add(user1);
             db.SaveChanges();
         }
 
@@ -25,7 +34,7 @@ namespace ChatModels
             else return false;
         }
 
-        public bool GetUser(string login, int password)
+        public bool GetUser(string login, string password)
         {
             var u = db.User.FirstOrDefault(x => x.Name == login && x.PasswordHash == password);
             if (u != null) { return true; }
