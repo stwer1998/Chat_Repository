@@ -56,7 +56,7 @@ using Chat.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "486fc3774fca41d3bbd9f491e089f5d6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72e9fe0da63407db64641ac9b93d025", async() => {
                 BeginContext(31, 65, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <title>SignalR Chat</title>\r\n");
                 EndContext();
@@ -76,12 +76,12 @@ using Chat.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(105, 2054, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b72e1d35ebc24a9e9da6d03d4e2d8dd7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2edfdec55444f95b5727d75fa0c4f40", async() => {
                 BeginContext(111, 221, true);
                 WriteLiteral("\r\n   <div id=\"header\"></div><br />\r\n\r\n    <div id=\"inputForm\">\r\n        <input type=\"text\" id=\"message\" />\r\n        <input type=\"button\" id=\"sendBtn\" value=\"Отправить\" />\r\n    </div>\r\n    <div id=\"chatroom\"></div>\r\n\r\n    ");
                 EndContext();
                 BeginContext(332, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "56437724e66241989ff711983c9f31f0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a8dc1c2effb244febf897d3e35478ed8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -32,11 +32,12 @@ namespace Chat
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, groupname);
             message = Command(message,username,groupname);
-            if (message != null)
+            if (message != null && message != "У вас нет прав на это")
             {
                 await Clients.Group(groupname).SendAsync("Receive", message, username);
             }
-            else await Clients.Caller.SendAsync("Receive","Вы заблокированны",username);
+            else if (message== "У вас нет прав на это") {await Clients.Caller.SendAsync("Receive", "У вас нет прав на это", username); }
+            else await Clients.Caller.SendAsync("Receive", "Вы заблокированны", username);
         }
 
         private string Command(string message,string login,string id)
@@ -63,13 +64,13 @@ namespace Chat
                     switch (command)
                     {
                                                  
-                        case "//add user": db.AddMember(groupId, db.GetUser(login), db.GetUser(param)); return login + " добавил :" + param;
-                        case "//ban user": db.DropMember(groupId, db.GetUser(login), db.GetUser(param)); return login + " удалил :" + param;
-                        case "//block user": db.BlockUser(groupId, db.GetUser(login), db.GetUser(param)); return login + " заблокировал :" + param;
-                        case "//activate user": db.UnlockUser(groupId, db.GetUser(login), db.GetUser(param)); return login + " разблокировал :" + param;
-                        case "//add moderator": db.AddModerator(groupId, db.GetUser(login), db.GetUser(param)); return login + " сделал модератором :" + param;
-                        case "//ban moderator": db.DropModerator(groupId, db.GetUser(login), db.GetUser(param)); return login + " удалил модератора :" + param;
-                        case "//room rename": db.RenameGroup(groupId, db.GetUser(login), param); return login + " переименовал комнату :" + param;
+                        case "//add user": return db.AddMember(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//ban user": return db.DropMember(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//block user":return db.BlockUser(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//activate user":return db.UnlockUser(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//add moderator":return db.AddModerator(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//ban moderator":return db.DropModerator(groupId, db.GetUser(login), db.GetUser(param)); 
+                        case "//room rename":return db.RenameGroup(groupId, db.GetUser(login), param); 
                     }
                 }
             }

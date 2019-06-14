@@ -13,19 +13,19 @@ namespace ChatModels
             db = _db;
         }
 
-        public bool AddMember(int groupId, User user, User newuser)
+        public string AddMember(int groupId, User user, User newuser)
         {
             if (Check(user, groupId) != "bloced")
             {
-                var role = db.Roles.First(x=>x.UserRole=="active");
+                var role = db.Roles.First(x => x.UserRole == "active");
                 db.Group.First(x => x.GroupId == groupId).Members.Add(new GroupMember { Member = newuser, RoleInGroup = role });
                 db.SaveChanges();
-                return true;
+                return user.Name + " добавил :" + newuser.Name;
             }
-            else return false;
+            else return "У вас нет прав на это";
         }
 
-        public bool AddModerator(int groupId, User user, User moderatoruser)
+        public string AddModerator(int groupId, User user, User moderatoruser)
         {
             if (Check(user, groupId) == "admin")
             {
@@ -33,14 +33,14 @@ namespace ChatModels
                 var role = db.Roles.First(x => x.UserRole == "moderator");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == moderatoruser).RoleInGroup = role;
                 db.SaveChanges();
-                return true;
+                return user.Name + " сделал модератором : " + moderatoruser.Name;
 
             }
-            else return false;
-            
+            else return "У вас нет прав на это";
+
         }
 
-        public bool BlockUser(int groupId, User user, User blockuser)
+        public string BlockUser(int groupId, User user, User blockuser)
         {
             if (Check(user,groupId) == "admin" || Check(user, groupId) == "moderator")
             {
@@ -48,31 +48,31 @@ namespace ChatModels
                 var role = db.Roles.First(x=>x.UserRole== "blocked");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == blockuser).RoleInGroup = role;
                 db.SaveChanges();
-                return true;
+                return user.Name + " заблокировал :" + blockuser.Name;
 
             }
-            else return false;
+            else return "У вас нет прав на это";
         }
 
-        public bool DeleteMessage(int groupId, User user, int idmessage)
+        public string DeleteMessage(int groupId, User user, int idmessage)
         {
-            if (Check(user, groupId) == "admin" || Check(user, groupId) == "moderator") { return true; }
-            else return false;
+            if (Check(user, groupId) == "admin" || Check(user, groupId) == "moderator") { return null; }
+            else return "У вас нет прав на это";
         }
 
-        public bool DropMember(int groupId, User user, User dropuser)
+        public string DropMember(int groupId, User user, User dropuser)
         {
             if (Check(user,groupId) == "admin"|| Check(user, groupId) == "moderator")
             {
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == dropuser);
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.Remove(d);
                 db.SaveChanges();
-                return true;
+                return user.Name + " удалил :" + dropuser.Name;
             }
-            else return false;
+            else return "У вас нет прав на это";
         }
 
-        public bool DropModerator(int groupId, User user, User dropmoderator)
+        public string DropModerator(int groupId, User user, User dropmoderator)
         {
             if (Check(user, groupId) == "admin")
             {
@@ -80,10 +80,10 @@ namespace ChatModels
                 var role = db.Roles.First(x => x.UserRole == "active");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == dropmoderator).RoleInGroup = role;
                 db.SaveChanges();
-                return true;
+                return user.Name + " удалил модератора :" + dropmoderator.Name;
 
             }
-            else return false;
+            else return "У вас нет прав на это";
         }
 
         public User GetUser(string login)
@@ -100,23 +100,23 @@ namespace ChatModels
             else return new List<Group>();
         }
 
-        public bool RenameGroup(int groupId, User user, string newname)
+        public string RenameGroup(int groupId, User user, string newname)
         {
             if (Check(user,groupId)=="admin") {
                 db.Group.First(x => x.GroupId == groupId).NameGroup = newname;
                 db.SaveChanges();
-                return true;
+                return user.Name + " переименовал комнату :" + newname;
             }
-            else return false;
+            else return "У вас нет прав на это";
         }
 
-        public bool SendMessage(int groupId, User senduser, string message)
+        public string SendMessage(int groupId, User senduser, string message)
         {
-            if (Check(senduser,groupId)!="blocked") { return true; }
-            else return false;
+            if (Check(senduser,groupId)!="blocked") { return null; }
+            else return null;
         }
 
-        public bool UnlockUser(int groupId, User user, User unlockkuser)
+        public string UnlockUser(int groupId, User user, User unlockkuser)
         {
             if (Check(user, groupId) == "admin" || Check(user, groupId) == "moderator")
             {
@@ -124,10 +124,10 @@ namespace ChatModels
                 var role = db.Roles.First(x => x.UserRole == "active");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == unlockkuser).RoleInGroup = role;
                 db.SaveChanges();
-                return true;
+                return user.Name + " разблокировал :" + unlockkuser.Name;
             }
-            return false;
-                
+            return "У вас нет прав на это";
+
         }
 
         public int СreateGroup(User user, string name)

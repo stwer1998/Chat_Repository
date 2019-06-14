@@ -66,7 +66,7 @@ using Chat.Models;
             WriteLiteral("\r\n<h2>CreateGroup</h2>\r\n\r\n");
             EndContext();
             BeginContext(75, 273, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb75a6d62c3447fdb652d10d18ed43dc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df6bea5258924d758ac02061284effe8", async() => {
                 BeginContext(142, 199, true);
                 WriteLiteral("\r\n    <div>\r\n        <h3>Название группы</h3>\r\n    </div>\r\n    <div>\r\n        <input type=\"text\" name=\"name\" />\r\n    </div>\r\n    <div>\r\n        <input type=\"submit\" value=\"Создать\" />\r\n    </div>\r\n\r\n");
                 EndContext();

@@ -19,63 +19,63 @@ namespace ChatModels
         /// <param name="groupId">Идентификатор группы</param>
         /// <param name="user">Кто требует добавление</param>
         /// <param name="newuser">Кого нужно добавить</param>
-        bool AddMember(int groupId, User user, User newuser);
+        string AddMember(int groupId, User user, User newuser);
         /// <summary>
         /// Блокирует участника группы
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="blockinguser"></param>
-        bool BlockUser(int groupId, User user, User blockuser);
+        string BlockUser(int groupId, User user, User blockuser);
         /// <summary>
         /// Разблокирует участника группы
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="unlockkuser"></param>
-        bool UnlockUser(int groupId, User user, User unlockkuser);
+        string UnlockUser(int groupId, User user, User unlockkuser);
         /// <summary>
         /// Удалит из группы участника
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="dropuser"></param>
-        bool DropMember(int groupId, User user, User dropuser);
+        string DropMember(int groupId, User user, User dropuser);
         /// <summary>
         /// Добавит модератор в группу
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="moderatoruser"></param>
-        bool AddModerator(int groupId, User user, User moderatoruser);
+        string AddModerator(int groupId, User user, User moderatoruser);
         /// <summary>
         /// Удалит модератора из группы
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="dropmoderator"></param>
-        bool DropModerator(int groupId, User user, User dropmoderator);
+        string DropModerator(int groupId, User user, User dropmoderator);
         /// <summary>
         /// Переименует группу
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="newname"></param>
-        bool RenameGroup(int groupId, User user,string newname);
+        string RenameGroup(int groupId, User user,string newname);
         /// <summary>
         /// Отправка сообщений
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="senduser"></param>
         /// <param name="message"></param>
-        bool SendMessage(int groupId, User senduser, string message);
+        string SendMessage(int groupId, User senduser, string message);
         /// <summary>
         /// Удаление сообщений
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="user"></param>
         /// <param name="idmessage"></param>
-        bool DeleteMessage(int groupId, User user, int idmessage);
+        string DeleteMessage(int groupId, User user, int idmessage);
         /// <summary>
         /// Получение список груп полтзователя
         /// </summary>
