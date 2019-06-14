@@ -11832,11 +11832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
+      "projectUniqueName": "D:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
       "projectName": "Chat",
-      "projectPath": "d:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
+      "projectPath": "D:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
       "packagesPath": "C:\\Users\\Администратор\\.nuget\\packages\\",
-      "outputPath": "d:\\C#\\Chat_Repository\\Chat\\Chat\\obj\\",
+      "outputPath": "D:\\C#\\Chat_Repository\\Chat\\Chat\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11855,8 +11855,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "d:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj": {
-              "projectPath": "d:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj"
+            "D:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj": {
+              "projectPath": "D:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj"
             }
           }
         }

@@ -7,9 +7,9 @@ namespace ChatModels
 {
     public class MyDbContext : DbContext
     {
-        const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=ChatDb;Trusted_Connection=True;MultipleActiveResultSets=true";
-        public MyDbContext() : base()
-        { Database.EnsureCreated(); }
+        //const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=ChatDb;Trusted_Connection=True;MultipleActiveResultSets=true";
+        //public MyDbContext() : base()
+        //{ Database.EnsureCreated(); }
 
         public DbSet<User> User { get; set; }
         public DbSet<Message> Messages { get; set; }
@@ -20,12 +20,8 @@ namespace ChatModels
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
             Database.EnsureCreated();
-            
+
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(connectionString);            
-        }
     }
 }

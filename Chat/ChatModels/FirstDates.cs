@@ -7,9 +7,9 @@ namespace ChatModels
     public class FirstDates
     {
         private MyDbContext db;
-        public FirstDates()
+        public FirstDates(MyDbContext _db)
         {
-            db = new MyDbContext();
+            db = _db;
         }
 
         public void AddingRoles()

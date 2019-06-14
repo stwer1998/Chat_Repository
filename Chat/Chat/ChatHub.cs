@@ -9,7 +9,13 @@ namespace Chat
 {
     public class ChatHub : Hub
     {
-        //string groupname = "cats";
+        private IGroupRepository db;
+        public ChatHub(IGroupRepository _db)
+        {
+            db = _db;
+        }
+        
+
         public async Task Enter(string username,string groupname)
         {
             if (String.IsNullOrEmpty(username))
@@ -35,7 +41,6 @@ namespace Chat
 
         private string Command(string message,string login,string id)
         {
-            IGroupRepository db = new GroupRepository();
             int groupId = Convert.ToInt32(id);
             if (message.StartsWith("//"))
             {

@@ -46,8 +46,8 @@
         });
 
         // установка имени пользователя
-        var userName = @ViewBag.name;
-        var groupname= @ViewBag.groupname;
+        var userName = "@ViewBag.name";
+        var groupname = "@ViewBag.groupname";
         // отправка сообщения на сервер
         document.getElementById("sendBtn").addEventListener("click", function (e) {
             let message = document.getElementById("message").value;

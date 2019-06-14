@@ -8,9 +8,9 @@ namespace ChatModels
     public class GroupRepository:IGroupRepository
     {
         private MyDbContext db;
-        public GroupRepository()
+        public GroupRepository(MyDbContext _db)
         {
-            db = new MyDbContext();
+            db = _db;
         }
 
         public bool AddMember(int groupId, User user, User newuser)
@@ -93,7 +93,11 @@ namespace ChatModels
 
         public List<Group> GetUserGroups(User user)
         {
-             return db.Group.Where(x => x.Members.Select(w => w.Member).Contains(user)).ToList();
+            if (user != null)
+            {
+                return db.Group.Where(x => x.Members.Select(w => w.Member).Contains(user)).ToList();
+            }
+            else return new List<Group>();
         }
 
         public bool RenameGroup(int groupId, User user, string newname)

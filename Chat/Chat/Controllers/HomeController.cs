@@ -14,9 +14,9 @@ namespace Chat.Controllers
     public class HomeController : Controller
     {
         IGroupRepository db;
-        public HomeController()
+        public HomeController(IGroupRepository _db)
         {
-            db = new GroupRepository();
+            db = _db;
         }
         public IActionResult Index()
         {

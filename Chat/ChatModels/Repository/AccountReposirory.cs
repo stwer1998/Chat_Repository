@@ -7,9 +7,9 @@ namespace ChatModels
     public class AccountReposirory : IAccountReposirory
     {
         private MyDbContext db;
-        public AccountReposirory()
+        public AccountReposirory(MyDbContext _db)
         {
-            db = new MyDbContext();
+            db = _db;
         }
 
         public void AddUser(User user)
@@ -17,7 +17,7 @@ namespace ChatModels
             var role = db.Roles.FirstOrDefault(x => x.UserRole == "active");
             if (role==null)
             {
-                var firsttime = new FirstDates();
+                var firsttime = new FirstDates(db);
                 firsttime.AddingRoles();
                 role= db.Roles.FirstOrDefault(x => x.UserRole == "active");
             }

@@ -14,9 +14,9 @@ namespace ChatWebApplication.Controllers
     public class AccountController : Controller
     {
         private IAccountReposirory unitofwork;
-        public AccountController()
+        public AccountController(IAccountReposirory _unitofwork)
         {
-            unitofwork = new AccountReposirory();
+            unitofwork = _unitofwork;
         }
 
         [HttpGet]
