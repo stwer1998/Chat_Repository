@@ -19,7 +19,7 @@ namespace ChatModels
             {
                 var role = db.Roles.First(x=>x.UserRole=="active");
                 db.Group.First(x => x.GroupId == groupId).Members.Add(new GroupMember { Member = newuser, RoleInGroup = role });
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
             else return false;
@@ -32,7 +32,7 @@ namespace ChatModels
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == moderatoruser);
                 var role = db.Roles.First(x => x.UserRole == "moderator");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == moderatoruser).RoleInGroup = role;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
 
             }
@@ -47,7 +47,7 @@ namespace ChatModels
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == blockuser);
                 var role = db.Roles.First(x=>x.UserRole== "blocked");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == blockuser).RoleInGroup = role;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
 
             }
@@ -66,7 +66,7 @@ namespace ChatModels
             {
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == dropuser);
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.Remove(d);
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
             else return false;
@@ -79,7 +79,7 @@ namespace ChatModels
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == dropmoderator);
                 var role = db.Roles.First(x => x.UserRole == "active");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == dropmoderator).RoleInGroup = role;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
 
             }
@@ -104,7 +104,7 @@ namespace ChatModels
         {
             if (Check(user,groupId)=="admin") {
                 db.Group.First(x => x.GroupId == groupId).NameGroup = newname;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
             else return false;
@@ -123,7 +123,7 @@ namespace ChatModels
                 var d = db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(p => p.Member == unlockkuser);
                 var role = db.Roles.First(x => x.UserRole == "active");
                 db.Group.Include(x => x.Members).First(x => x.GroupId == groupId).Members.First(x => x.Member == unlockkuser).RoleInGroup = role;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
             return false;
