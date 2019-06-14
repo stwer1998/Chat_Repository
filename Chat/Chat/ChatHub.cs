@@ -35,7 +35,7 @@ namespace Chat
 
         private string Command(string message,string login,string id)
         {
-            var db = new GroupRepository();
+            IGroupRepository db = new GroupRepository();
             int groupId = Convert.ToInt32(id);
             if (message.StartsWith("//"))
             {

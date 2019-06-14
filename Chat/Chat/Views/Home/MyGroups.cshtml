@@ -7,7 +7,7 @@
 
 @for (int i = 0; i < ViewBag.groups.Count; i++)
 {
-    <a href="EnterGroup?groupname=@ViewBag.groups[i].GroupId">@ViewBag.groups[i].NameGroup</a><br />
+    <a href="Home/EnterGroup?groupname=@ViewBag.groups[i].GroupId">@ViewBag.groups[i].NameGroup</a><br />
 }
 
 

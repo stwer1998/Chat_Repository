@@ -56,7 +56,7 @@ using Chat.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ca7fc22bd049e59e0f9a23229662e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8fcf0b3af0442b58981b8df52b9c363", async() => {
                 BeginContext(31, 65, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <title>SignalR Chat</title>\r\n");
                 EndContext();
@@ -76,7 +76,7 @@ using Chat.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(105, 2309, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fa52a952e844f9db32e32e9f2568473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "764c70ceff89428b80f1c3fc1986cf37", async() => {
                 BeginContext(111, 404, true);
                 WriteLiteral(@"
     <div id=""loginBlock"">
@@ -96,7 +96,7 @@ using Chat.Models;
     ");
                 EndContext();
                 BeginContext(515, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "042e1da804504e0d99eec9bf2731c776", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3304f125c6240c89219c87b66b8b2e4", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

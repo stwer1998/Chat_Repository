@@ -1,0 +1,12 @@
+Первый запуск будет медленный потомучто создаётся бд.
+нужно зарегистрироваться (логин пароль);
+Для создание комната Home/CreateGroup либо нажимаем на CreateGroup;
+Команды в группе
+//help все команды 
+//add user {username} добавит в группу пользоваткля 
+//ban user {username} 
+//block user {username} 
+//activate user {username} 
+//add moderator {username} 
+//ban moderator {username} 
+//room rename {newname}

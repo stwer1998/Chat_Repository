@@ -88,6 +88,13 @@ namespace ChatModels
         /// <param name="login"></param>
         /// <returns></returns>
         User GetUser(string login);
+        /// <summary>
+        /// Вернет состояние пользователя для группы
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="groupId"></param>
+        /// <returns></returns>
+        string Check(User user, int groupId);
 
     }
 }
