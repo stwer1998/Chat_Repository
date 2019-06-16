@@ -42,8 +42,6 @@ d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\Chat.dll
 d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\Chat.pdb
 d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\Chat.Views.dll
 d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\Chat.Views.pdb
-d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\ChatModels.dll
-d:\C#\Chat_Repository\Chat\Chat\bin\Debug\netcoreapp2.1\ChatModels.pdb
 d:\C#\Chat_Repository\Chat\Chat\obj\Debug\netcoreapp2.1\Chat.csprojAssemblyReference.cache
 d:\C#\Chat_Repository\Chat\Chat\obj\Debug\netcoreapp2.1\Chat.csproj.CoreCompileInputs.cache
 d:\C#\Chat_Repository\Chat\Chat\obj\Debug\netcoreapp2.1\Chat.RazorAssemblyInfo.cache

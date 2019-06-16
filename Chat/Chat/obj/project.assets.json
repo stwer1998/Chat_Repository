@@ -4333,20 +4333,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "ChatModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1"
-        },
-        "compile": {
-          "bin/placeholder/ChatModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ChatModels.dll": {}
-        }
       }
     }
   },
@@ -11810,16 +11796,10 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
-    },
-    "ChatModels/1.0.0": {
-      "type": "project",
-      "path": "../ChatModels/ChatModels.csproj",
-      "msbuildProject": "../ChatModels/ChatModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "ChatModels >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
@@ -11832,11 +11812,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
+      "projectUniqueName": "d:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
       "projectName": "Chat",
-      "projectPath": "D:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
+      "projectPath": "d:\\C#\\Chat_Repository\\Chat\\Chat\\Chat.csproj",
       "packagesPath": "C:\\Users\\Администратор\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Chat_Repository\\Chat\\Chat\\obj\\",
+      "outputPath": "d:\\C#\\Chat_Repository\\Chat\\Chat\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11854,11 +11834,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {
-            "D:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj": {
-              "projectPath": "D:\\C#\\Chat_Repository\\Chat\\ChatModels\\ChatModels.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

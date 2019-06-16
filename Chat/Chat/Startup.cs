@@ -35,8 +35,8 @@ namespace Chat
             //    options.CheckConsentNeeded = context => true;
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
-            services.AddTransient<IGroupRepository,GroupRepository>();
-            services.AddTransient<IAccountReposirory,AccountReposirory>();
+            services.AddScoped<IGroupRepository,GroupRepository>();
+            services.AddScoped<IAccountReposirory,AccountReposirory>();
 
             services.AddSignalR();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
